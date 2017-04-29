@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, request
-import json
-import requests
+#import json
+#import requests
 
 app = Flask(__name__)
 
@@ -9,6 +9,8 @@ app = Flask(__name__)
 def index():
 	return "Hello World!"
 # ส่วน callback สำหรับ Webhook
+
+'''
 @app.route('/callback', methods=['POST'])
 def callback():
     json_line = request.get_json()
@@ -41,6 +43,7 @@ def sendText(user, text):
     #print("ข้อมูล：",data)
     r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
     #print(r.text)
+'''
 
 if __name__ == '__main__':
      app.run(debug=True)
