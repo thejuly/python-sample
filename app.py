@@ -1,52 +1,22 @@
-# -*- coding: utf-8 -*-
-from flask import Flask #, request
-#import json
-#import requests
-
+from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-	return "Hello World!"
-# ส่วน callback สำหรับ Webhook
+def hello_world():
+    return 'Hello World!'
 
-'''
-@app.route('/callback', methods=['POST'])
-def callback():
-    json_line = request.get_json()
-    json_line = json.dumps(json_line)
-    decoded = json.loads(json_line)
-    user = decoded["events"][0]['replyToken']
-    #id=[d['replyToken'] for d in user][0]
-    #print(json_line)
-    print("ผู้ใช้：",user)
-    sendText(user,'งง') # ส่งข้อความ งง
-    return '',200
+@app.route('/tuna')
+def tuna():
+    return '<h2>Tuna is good</h2>'
 
-def sendText(user, text):
-    LINE_API = 'https://api.line.me/v2/bot/message/reply'
-    Authorization = 'Bearer ENTER_ACCESS_TOKEN' # ใส่ ENTER_ACCESS_TOKEN เข้าไป
+@app.route('/profile/<user>')
+def profile(user):
+    return '<h2>Tuna is good %s</h2>' % user
 
-    headers = {
-        'Content-Type': 'application/json; charset=UTF-8',
-        'Authorization':Authorization
-    }
+@app.route('/post/<int:post_id>')
+def post(post_id):
+    return '<h2>Tuna is good %s</h2>' % post_id
 
-    data = json.dumps({
-        "replyToken":user,
-        "messages":[{
-            "type":"text",
-            "text":text
-        }]
-    })
-
-    #print("ข้อมูล：",data)
-    r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
-    #print(r.text)
-
-if __name__ == '__main__':
-     app.run(debug=True)
-'''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
