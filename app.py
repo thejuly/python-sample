@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, request
-import json
-import requests
+from flask import Flask#, request
+#import json
+#import requests
  
 app = Flask(__name__)
  
