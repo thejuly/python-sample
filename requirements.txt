@@ -1,1 +1,3 @@
 request
+Flask==0.10.1
+Flask-Sockets==0.2.1
