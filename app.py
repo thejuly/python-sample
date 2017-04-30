@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello World!x'
+    return 'Hello World!'
 
 @app.route('/tuna')
 def tuna():
