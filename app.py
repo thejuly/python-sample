@@ -27,9 +27,9 @@ def post(post_id):
     return '<h2>Tuna is good %s</h2>' % post_id
 
 ###############################
-@app.route('/callback', methods=['POST'])
-def post(post_id):
-    return '<h2>Tuna is good %s</h2>' % post_id
+@app.route('/tunax')
+def tuna():
+    return '<h2>Tuna is good</h2>'
 ##############################
 
 
