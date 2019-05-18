@@ -19,7 +19,7 @@ def tuna():
     return '<h2>Tuna is good</h2>'
 
 @app.route('/thongpoon')
-def tuna():
+def thongpoon():
     return '<h2>Tuna is good</h2>'
 
 @app.route('/profile/<user>')
