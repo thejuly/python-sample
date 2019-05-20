@@ -73,9 +73,18 @@ def post(post_id):
 def temp():
     userThongpoon = 'fdbc6747edd645dc9f77dca0eb120e94'
     sendMessage = 'Temp report in period'
-    sendText(userThongpoon,sendMessage)
+    #sendText(userThongpoon,sendMessage)
     return '',200
 
+
+    try:
+        cur.execute("""SELECT * from t_report""")
+    except:
+        print 'cannot select'
+        
+    rows = cur.fetchall()
+    for row in rows:
+        msg = row[2]
 @app.route('/serv')
 def serv():
     try:
