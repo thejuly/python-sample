@@ -74,7 +74,7 @@ def temp():
     userThongpoon = 'fdbc6747edd645dc9f77dca0eb120e94'
     sendMessage = 'Temp report in period'
     #sendText(userThongpoon,sendMessage)
-    return '',200
+    #return '',200
 
 
     try:
@@ -85,6 +85,9 @@ def temp():
     rows = cur.fetchall()
     for row in rows:
         msg = row[2]
+        
+    return msg
+
 @app.route('/serv')
 def serv():
     try:
