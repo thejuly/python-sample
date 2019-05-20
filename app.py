@@ -73,7 +73,7 @@ def post(post_id):
 def temp():
     userThongpoon = 'fdbc6747edd645dc9f77dca0eb120e94'
     sendMessage = 'Temp report in period'
-    #sendText(userThongpoon,sendMessage)
+    sendText(userThongpoon,sendMessage)
     return '',200
 
 @app.route('/serv')
