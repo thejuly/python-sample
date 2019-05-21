@@ -3,7 +3,7 @@ import os
 
 
 from flask import Flask, request
-
+import json
 import requests
 #import psycopg2
 
@@ -12,6 +12,20 @@ import random
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from flask import Flask, request, abort
+
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+from linebot.exceptions import (
+    InvalidSignatureError
+)
+from linebot.models import *
+
+from linebot import LineBotApi
+from linebot.exceptions import LineBotApiError
+# end import module
+
+
 
 
 
