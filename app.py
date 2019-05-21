@@ -1,10 +1,11 @@
 import os
 #from flask import Flask
+
+
 from flask import Flask, request
 
 import json
 
-import psycopg2
 
 
 app = Flask(__name__)
