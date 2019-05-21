@@ -1,38 +1,11 @@
 import os
-#from flask import Flask
-
-
-
-from flask import Flask, request
-import json
-#import requests
-
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
     return 'Hello World!'
-
-@app.route('/tuna')
-def tuna():
-    return '<h2>Tuna is good</h2>'
-
-@app.route('/profile/<user>')
-def profile(user):
-    return '<h2>Tuna is good %s</h2>' % user
-
-@app.route('/post/<int:post_id>')
-def post(post_id):
-    return '<h2>Tuna is good %s</h2>' % post_id
-
-###############################
-@app.route('/callback', methods=['POST'])
-def post(post_id):
-    return '<h2>Tuna is good %s</h2>' % post_id
-##############################
-
-
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.
