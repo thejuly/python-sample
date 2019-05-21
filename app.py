@@ -4,7 +4,14 @@ import os
 
 from flask import Flask, request
 
-import json
+import requests
+#import psycopg2
+
+import re
+import random
+from bs4 import BeautifulSoup
+from collections import defaultdict
+from flask import Flask, request, abort
 
 
 
