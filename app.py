@@ -1,5 +1,30 @@
+#import os
+#from flask import Flask
+
+
 import os
-from flask import Flask
+from flask import Flask, request
+import json
+import requests
+import psycopg2
+
+import re
+import random
+from bs4 import BeautifulSoup
+from collections import defaultdict
+from flask import Flask, request, abort
+
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+from linebot.exceptions import (
+    InvalidSignatureError
+)
+from linebot.models import *
+
+from linebot import LineBotApi
+from linebot.exceptions import LineBotApiError
+
 
 app = Flask(__name__)
 
