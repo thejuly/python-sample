@@ -1,11 +1,12 @@
+# -*- coding: utf-8 -*-
 import os
-#from flask import Flask
-
-
 from flask import Flask, request
 import json
 import requests
+
+
 #import psycopg2
+
 
 import re
 import random
@@ -29,6 +30,17 @@ from linebot.exceptions import LineBotApiError
 
 
 
+
+
+
+'''
+try:
+    conn = psycopg2.connect("dbname='d6nfkhldr8m73b' user='dxebvbtkaavoqw' host='ec2-54-235-114-242.compute-1.amazonaws.com' password='850c57e80ca8ddc9bd59b42511534ca024b3b02e98b85646746e937551fefeb8'")
+    cur = conn.cursor()
+
+except:
+    print 'cannot connect'
+'''    
 
 
 
@@ -325,10 +337,6 @@ def handle_message(event):
     
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=json_line))
         return 0
-
-
-
-
 
 
 
