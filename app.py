@@ -76,8 +76,8 @@ def hello():
 
 @app.route('/tuna')
 def tuna():
-    return '<h2>Tuna is good</h2>'
-    #return cell
+    #return '<h2>Tuna is good</h2>'
+    return cell
 
 @app.route('/profile/<user>')
 def profile(user):
