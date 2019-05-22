@@ -26,6 +26,19 @@ from linebot import LineBotApi
 from linebot.exceptions import LineBotApiError
 # end import module
 
+####google sheet####
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from pprint import pprint
+
+
+global cell
+scope = ['https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+client = gspread.authorize(creds)
+sheet = client.open("dcs-report").sheet1  # Open the spreadhseet
+cell = sheet.cell(2,2).value  # Get the value of a specific cell
+
 
 
 
@@ -62,7 +75,8 @@ def hello():
 
 @app.route('/tuna')
 def tuna():
-    return '<h2>Tuna is good</h2>'
+    #return '<h2>Tuna is good</h2>'
+    return cell
 
 @app.route('/profile/<user>')
 def profile(user):
